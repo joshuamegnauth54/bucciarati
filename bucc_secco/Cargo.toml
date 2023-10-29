@@ -1,0 +1,6 @@
+[package]
+name = "bucc_secco"
+authors = ["Joshua Megnauth <jo.sh@tutanota.com>"]
+version = "0.1.0"
+edition = "2021"
+

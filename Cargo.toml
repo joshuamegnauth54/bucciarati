@@ -1,0 +1,31 @@
+[package]
+name = "bucciarati"
+version = "0.1.0"
+authors = ["Joshua Megnauth <jo.sh@tutanota.com>"]
+edition = "2021"
+description = "Bucciarati mounts archives with FUSE."
+keywords = ["compression", "driver", "filesystem", "fuse"]
+license = "MIT"
+repository = "https://github.com/joshuamegnauth54/bucciarati"
+
+[target.'cfg(unix)'.dependencies]
+fuser = "0.13"
+
+[target.'cfg(windows)'.dependencies]
+dokan = "0.3"
+
+[workspace]
+members = ["bucc_secco"]
+
+[dependencies]
+anyhow = { version = "1.0", features = ["backtrace"] }
+bucc_secco = { path = "crates/bucc_secco" }
+clap = { version = "4.4", features = ["derive"] }
+compress-tools = "0.14"
+infer = "0.15"
+libc = "0.2"
+log = "0.4"
+lzma-rs = "0.3"
+pretty_env_logger = "0.5"
+ring = "0.17"
+zip = "0.6"
